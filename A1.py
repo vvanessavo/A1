@@ -16,7 +16,13 @@ def read_lines_from_txt(fp: [str, os.PathLike]) -> List[str]:
     and newline characters.
     """
     # TODO
-    return []
+    ##Create an empty list to store empty lines
+    lines = []
+    ##open file using with to open fiile and stip() to remove whitespace
+    with open(fp, 'r') as file:
+        for line in file:
+            lines.append(line.strip())
+    return lines
 
 
 def is_valid_var_name(s: str) -> bool:
